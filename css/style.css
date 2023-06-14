@@ -165,5 +165,25 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
+/* FOOTER */ 
+.footer {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.github-link path,
+.rs-link path {
+    fill: var(--basic-yellow);
+}
+
+.text-copyright {
+    font-family: 'Aleo', serif;
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--basic-yellow);
+    
+    margin: 0;
+}
 
