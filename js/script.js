@@ -1,6 +1,8 @@
 /* SELECTORS */
 const player = document.querySelector('.video');
 const video = player.querySelector('.main-video');
+const poster = document.querySelector('.poster');
+const middlePlay = document.querySelector('.middle-play-btn')
 
 // controls
 const controlPlay = player.querySelector('.play-btn');
@@ -15,10 +17,12 @@ const controlTimer = player.querySelector('.timer');
 function togglePlay() {
     if (video.paused) {
         video.play();
+        middlePlay.classList.add('visually-hidden')
         svgPlay.classList.add('visually-hidden');
         svgPause.classList.remove('visually-hidden');
     } else {
         video.pause();
+        middlePlay.classList.remove('visually-hidden')
         svgPlay.classList.remove('visually-hidden');
         svgPause.classList.add('visually-hidden');
     }
@@ -73,3 +77,12 @@ buttonVolume.addEventListener('click', toggleVolume); // mute и unmute звук
 controlVolume.addEventListener('input', changeVolume); // изменение звука на ползунке
 video.addEventListener('timeupdate', handlerTimer); // изменение ползунка времени при просмотре видео
 controlTimer.addEventListener('input', moveTimer); // изменение времени при клике на ползунок времени
+
+function hidePoster() {
+    poster.classList.add('visually-hidden')
+    middlePlay.classList.add('visually-hidden')
+    togglePlay();
+}
+
+poster.addEventListener('click', hidePoster)
+middlePlay.addEventListener('click', hidePoster)
