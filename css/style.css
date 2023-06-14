@@ -163,6 +163,10 @@ img {
     -webkit-appearance: none;
 }
 
+.volume {
+    background: linear-gradient(to right, #bdae82 0%, #bdae82 50%, #c8c8c8 50%, #c8c8c8 100%);
+}
+
 input[type=range]::-webkit-slider-thumb {
     height: 15px;
     width: 15px;
