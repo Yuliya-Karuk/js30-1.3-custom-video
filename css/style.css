@@ -178,10 +178,9 @@ img {
     align-items: center;
     justify-content: space-between;
 
-
-        font-size: 20px;
-        line-height: 1.2;
-        color: var(--basic-yellow);
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--basic-yellow);
 }
 
 .video-volume {
