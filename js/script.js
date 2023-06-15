@@ -16,6 +16,8 @@ const controlTimer = player.querySelector('.timer');
 const buttonScreen = player.querySelector('.screen-btn');
 const svgFullscreen = player.querySelector('.fullscreen-svg');
 const svgSmallscreen = player.querySelector('.smallscreen-svg');
+const currentTimeElement = player.querySelector('.current');
+const durationTimeElement = player.querySelector('.duration');
 
 video.removeAttribute('controls');
 
@@ -99,6 +101,17 @@ function toggleScreen() {
     }
 }
 
+// функция, которая показывает изменение времени на счетчике времени
+function currentTime() {
+    let currentMinutes = Math.floor(video.currentTime / 60)
+    let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60)
+    let durationMinutes = Math.floor(video.duration / 60)
+    let durationSeconds = Math.floor(video.duration - durationMinutes * 60)
+
+    currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`
+    durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`
+}
+
 poster.addEventListener('click', hidePoster) // убрать постер при клике на него
 middlePlay.addEventListener('click', hidePoster) // включать и выключать видео при клике на большую кнопку посередине видео
 video.addEventListener('click', togglePlay); // play и pause при клике на видео
@@ -108,3 +121,4 @@ controlVolume.addEventListener('input', changeVolume); // изменение з�
 video.addEventListener('timeupdate', handlerTimer); // изменение ползунка времени при просмотре видео
 controlTimer.addEventListener('input', moveTimer); // изменение времени при клике на ползунок времени
 buttonScreen.addEventListener('click', toggleScreen) //изменение fullscreen/ smallscreen при клике на кнопку
+video.addEventListener('timeupdate', currentTime); // изменение ползунка времени при просмотре видео
