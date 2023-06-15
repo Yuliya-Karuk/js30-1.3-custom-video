@@ -13,6 +13,11 @@ const svgVolume = player.querySelector('.volume-svg');
 const svgMute = player.querySelector('.mute-svg');
 const controlVolume = player.querySelector('.volume');
 const controlTimer = player.querySelector('.timer');
+const buttonScreen = player.querySelector('.screen-btn');
+const svgFullscreen = player.querySelector('.fullscreen-svg');
+const svgSmallscreen = player.querySelector('.smallscreen-svg');
+
+video.removeAttribute('controls');
 
 function togglePlay() {
     if (video.paused) {
@@ -71,18 +76,34 @@ function moveTimer() {
     video.currentTime = progress;
 }
 
-video.addEventListener('click', togglePlay); // play и pause при клике на видео
-controlPlay.addEventListener('click', togglePlay); // play и pause при клике на кнопку Play/Pause
-buttonVolume.addEventListener('click', toggleVolume); // mute и unmute звук при клике на кнопку звука
-controlVolume.addEventListener('input', changeVolume); // изменение звука на ползунке
-video.addEventListener('timeupdate', handlerTimer); // изменение ползунка времени при просмотре видео
-controlTimer.addEventListener('input', moveTimer); // изменение времени при клике на ползунок времени
-
+// функция, которая убирает постер и включает видео
 function hidePoster() {
     poster.classList.add('visually-hidden')
     middlePlay.classList.add('visually-hidden')
     togglePlay();
 }
 
-poster.addEventListener('click', hidePoster)
-middlePlay.addEventListener('click', hidePoster)
+function toggleScreen() {
+  if (document.fullscreenElement === null) {
+    console.log('bla')
+    svgFullscreen.classList.add('visually-hidden');
+    svgSmallscreen.classList.remove('visually-hidden');
+    player.requestFullscreen();
+
+  } else {
+    svgSmallscreen.classList.add('visually-hidden');
+    svgFullscreen.classList.remove('visually-hidden');
+    document.exitFullscreen();
+
+    }
+}
+
+poster.addEventListener('click', hidePoster) // убрать постер при клике на него
+middlePlay.addEventListener('click', hidePoster) // включать и выключать видео при клике на большую кнопку посередине видео
+video.addEventListener('click', togglePlay); // play и pause при клике на видео
+controlPlay.addEventListener('click', togglePlay); // play и pause при клике на кнопку Play/Pause
+buttonVolume.addEventListener('click', toggleVolume); // mute и unmute звук при клике на кнопку звука
+controlVolume.addEventListener('input', changeVolume); // изменение звука на ползунке
+video.addEventListener('timeupdate', handlerTimer); // изменение ползунка времени при просмотре видео
+controlTimer.addEventListener('input', moveTimer); // изменение времени при клике на ползунок времени
+buttonScreen.addEventListener('click', toggleScreen)

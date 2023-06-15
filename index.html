@@ -16,10 +16,10 @@
             <h2 class="header-title">Video</h2>
         </header>
 
-        <main>
+        <main class="main">
             <section class="video">
                 <h3 class="visually-hidden">Video player</h3>
-                <video class="main-video" src="video/video.mp4"></video>
+                <video class="main-video" src="video/video_paris.mp4"></video>
                 <div class="poster"></div>
                 <div class="middle-play-btn"></div>
                 <div class="player-controls">
@@ -73,6 +73,31 @@
                     <div class="video-volume">
                         <input class="volume" type="range" name="volume" min="0" max="1" step="0.1" value="0.5">
                     </div>
+                    <button class="player-btn screen-btn" type="button">
+                        <svg class="fullscreen-svg" width="36px" height="36px" version="1.1" viewBox="0 0 14 14"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+                                <g fill="#c8c8c8" id="Core" transform="translate(-215.000000, -257.000000)">
+                                    <g id="fullscreen" transform="translate(215.000000, 257.000000)">
+                                        <path
+                                            d="M2,9 L0,9 L0,14 L5,14 L5,12 L2,12 L2,9 L2,9 Z M0,5 L2,5 L2,2 L5,2 L5,0 L0,0 L0,5 L0,5 Z M12,12 L9,12 L9,14 L14,14 L14,9 L12,9 L12,12 L12,12 Z M9,0 L9,2 L12,2 L12,5 L14,5 L14,0 L9,0 L9,0 Z"
+                                            id="Shape" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg class="visually-hidden smallscreen-svg" width="36px" height="36px" version="1.1" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+                                <g fill="#c8c8c8" id="Core" transform="translate(-257.000000, -257.000000)">
+                                    <g id="fullscreen-exit" transform="translate(257.000000, 257.000000)">
+                                        <path
+                                            d="M0,11 L3,11 L3,14 L5,14 L5,9 L0,9 L0,11 L0,11 Z M3,3 L0,3 L0,5 L5,5 L5,0 L3,0 L3,3 L3,3 Z M9,14 L11,14 L11,11 L14,11 L14,9 L9,9 L9,14 L9,14 Z M11,3 L11,0 L9,0 L9,5 L14,5 L14,3 L11,3 L11,3 Z"
+                                            id="Shape" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
                 </div>
             </section>
         </main>
