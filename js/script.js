@@ -83,6 +83,7 @@ function hidePoster() {
     togglePlay();
 }
 
+// функция, которая включает и выключает fullscreen
 function toggleScreen() {
   if (document.fullscreenElement === null) {
     console.log('bla')
@@ -106,4 +107,4 @@ buttonVolume.addEventListener('click', toggleVolume); // mute и unmute звук
 controlVolume.addEventListener('input', changeVolume); // изменение звука на ползунке
 video.addEventListener('timeupdate', handlerTimer); // изменение ползунка времени при просмотре видео
 controlTimer.addEventListener('input', moveTimer); // изменение времени при клике на ползунок времени
-buttonScreen.addEventListener('click', toggleScreen)
+buttonScreen.addEventListener('click', toggleScreen) //изменение fullscreen/ smallscreen при клике на кнопку
