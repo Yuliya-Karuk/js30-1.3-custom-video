@@ -156,6 +156,7 @@ img {
 .player-btn {
     width: 36px;
     height: 36px;
+    padding: 0;
 
     background-color: var(--basic-dark);
     border: none;
@@ -255,4 +256,253 @@ input[type=range]::-webkit-slider-thumb {
     color: var(--basic-yellow);
 
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    .header-title {
+        font-size: 30px;
+    }
+
+    .middle-play-btn {
+        top: calc(50% - 100px/2);
+        left: calc(50% - 100px/2);
+    
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+    }
+
+    .player-controls {
+        padding: 10px 10px;
+    }
+
+    .video-timer {
+        width: calc(80% - 80px);
+    }
+
+    .video-volume {
+        width: calc(20% - 40px);
+    }
+
+    .player-btn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .player-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .play-btn {
+        margin-top: 0px;
+    }    
+
+    .video-timer {
+        font-size: 16px;
+    }
+
+    .volume,
+    .timer {
+        height: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+    .github-link,
+    .rs-link {
+        transform: scale(0.8);
+    }
+
+    .text-copyright {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 600px) {
+
+    .header-title {
+        margin: 20px auto;
+    }
+
+    .header-title::after {
+        right: -30px;
+        width: calc(50% - 20px);
+    }
+
+    .header-title::before {
+        left: -30px;
+        width: calc(50% - 20px);
+    }
+
+    .main {
+        padding: 0 40px;
+    }
+
+    .main-video {
+        border: 3px solid var(--basic-yellow);
+        border-bottom: 0;
+    }
+
+    .player-controls {
+        border: 3px solid var(--basic-yellow);
+        border-top: 0;
+    }
+
+    .footer {
+        padding: 20px 60px;
+    }
+
+    .author-name {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .header-title {
+        font-size: 24px;
+    }
+
+    .header-title::after {
+        top: 15px;
+    }
+
+    .header-title::before {
+        top: 15px;
+    }
+
+    .player-controls {
+        justify-content: space-between;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        height: 8px;
+        width: 8px;
+    }
+
+    .volume,
+    .timer {
+        height: 5px;
+    }
+
+    .timer {
+        margin-right: 10px;
+    }
+
+    .video-timer {
+        width: calc(80% - 50px);
+    }
+
+    .video-volume {
+        width: calc(20% - 20px);
+    }
+
+    .video-timer {
+        font-size: 10px;
+    }
+
+    .player-btn {
+        width: 12px;
+        height: 12px;
+        margin-top: -5px;
+    }
+
+    .player-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .text-copyright {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 391px) {
+
+    .main-video {
+        border: 1px solid var(--basic-yellow);
+        border-bottom: 0;
+    }
+
+    .player-controls {
+        border: 1px solid var(--basic-yellow);
+        border-top: 0;
+    }
+
+    .player-controls {
+        padding: 5px 5px 10px 5px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        height: 6px;
+        width: 6px;
+    }
+
+    .volume,
+    .timer {
+        height: 4px;
+    }
+
+    .timer {
+        margin-right: 5px;
+    }
+
+    .video-timer {
+        width: calc(80% - 40px);
+        align-items: end;
+    }
+
+    .video-volume {
+        width: calc(20% - 10px);
+        margin-bottom: -7px;
+    }
+
+    .video-timer {
+        font-size: 8px;
+    }
+
+    .player-btn {
+        width: 10px;
+        height: 10px;
+        margin-top: -5px;
+    }
+
+    .player-btn svg {
+        width: 8px;
+        height: 8px;
+    }
+
+    .footer {
+        padding: 10px 40px;
+    }
+
+    .github-link,
+    .rs-link {
+        transform: scale(0.6);
+    }
+
+    .current,
+    .duration {
+        margin-bottom: -2px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header-title {
+        font-size: 18px;
+    }
+
+    .main {
+        padding: 0 20px;
+    }
+
+    .footer {
+        padding: 10px 30px;
+    }
+
+    .github-link,
+    .rs-link {
+        transform: scale(0.5);
+    }
 }
